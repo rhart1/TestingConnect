@@ -22,7 +22,8 @@ ui <- fluidPage(
     mainPanel(
       
       # Output: Histogram ----
-      plotOutput(outputId = "distPlot")
+      plotOutput(outputId = "distPlot"),
+      textOutput(outputId = "praiseText")
       
     )
   )

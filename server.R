@@ -8,6 +8,7 @@ server <- function(input, output) {
   # 1. It is "reactive" and therefore should be automatically
   #    re-executed when inputs (input$bins) change
   # 2. Its output type is a plot
+  
   output$distPlot <- renderPlot({
     
     x    <- faithful$waiting
@@ -17,6 +18,10 @@ server <- function(input, output) {
          xlab = "Waiting time to next eruption (in mins)",
          main = "Histogram of waiting times")
     
+  })
+  
+  output$praiseText = renderText({
+    Sys.getenv("DATABASE_PASSWORD")
   })
   
 }
